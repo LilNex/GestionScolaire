@@ -14,6 +14,7 @@ namespace GestionScolaire.Classes
         private Boolean laboC;
         private Boolean travaux_PratiqueC;
         private Boolean bibliotheque;
+        private Boolean valide;
 
         public int NumeroC { get => numeroC; set => numeroC = value; }
         public int EtageC { get => etageC; set => etageC = value; }
