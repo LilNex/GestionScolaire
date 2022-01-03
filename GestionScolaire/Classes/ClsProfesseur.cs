@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GestionScolaire.Classes
 {
-    public class Professeur
+    public class ClsProfesseur
     {
         private int idP;
         private string nomP;

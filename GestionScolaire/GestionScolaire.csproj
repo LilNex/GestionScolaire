@@ -9,6 +9,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{ABBC78C5-E37B-41FD-9442-9EFDCC8CE2FD}</ProjectGuid>
+    <ProjectGuid>{ABBC78C5-E37B-41FD-9442-9EFDCC8CE2FD}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -215,6 +216,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="BD\clsConnection.cs" />
     <Compile Include="Classes\ClsAbsence.cs" />
     <Compile Include="Classes\ClsAdo.cs" />
     <Compile Include="Classes\ClsAvertissement.cs" />
@@ -224,7 +226,11 @@
     <Compile Include="Classes\ClsMatiere.cs" />
     <Compile Include="Classes\ClsNote.cs" />
     <Compile Include="Classes\ClsPaiement.cs" />
+<<<<<<< HEAD
     <Compile Include="Classes\Professeur.cs" />
+=======
+    <Compile Include="Classes\ClsProfesseur.cs" />
+>>>>>>> 8b6acbe0aef783d92e94b934433cc61a8c1670ad
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -242,6 +248,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -329,9 +339,7 @@
     </Content>
     <Content Include="Scripts\knockout.validation.min.js.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
