@@ -216,14 +216,15 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Classes\ClsAbsence.cs" />
+    <Compile Include="Classes\ClsAdo.cs" />
     <Compile Include="Classes\ClsAvertissement.cs" />
     <Compile Include="Classes\clsClasse.cs" />
     <Compile Include="Classes\ClsDocument.cs" />
+    <Compile Include="Classes\ClsEtudiant.cs" />
     <Compile Include="Classes\ClsMatiere.cs" />
     <Compile Include="Classes\ClsNote.cs" />
     <Compile Include="Classes\ClsPaiement.cs" />
     <Compile Include="Classes\Professeur.cs" />
-    <Compile Include="clsProfesseur.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
