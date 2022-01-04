@@ -27,7 +27,7 @@ namespace GestionScolaire.Classes
         {
             if (cn.State == ConnectionState.Open)
             {
-
+                //nnn
                 cn.Close();
             }
 
