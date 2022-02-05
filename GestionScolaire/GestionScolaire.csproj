@@ -226,11 +226,7 @@
     <Compile Include="Classes\ClsMatiere.cs" />
     <Compile Include="Classes\ClsNote.cs" />
     <Compile Include="Classes\ClsPaiement.cs" />
-<<<<<<< HEAD
-    <Compile Include="Classes\Professeur.cs" />
-=======
     <Compile Include="Classes\ClsProfesseur.cs" />
->>>>>>> 8b6acbe0aef783d92e94b934433cc61a8c1670ad
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -254,6 +250,7 @@
     </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="BD\query.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

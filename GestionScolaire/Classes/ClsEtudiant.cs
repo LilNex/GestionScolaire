@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data;
+
 
 namespace GestionScolaire.Classes
 {
@@ -50,7 +52,6 @@ namespace GestionScolaire.Classes
                 a.cmd.Connection = a.cn;
                 a.cmd.ExecuteNonQuery();
                 a.Deconnecter();
-                MessageBox.Show("Ajouté avec succès");
 
             }
             catch (Exception ex)
