@@ -7,18 +7,20 @@ namespace GestionScolaire.Classes
 {
     public class ClsProfesseur
     {
-        private int idP;
-        private string nomP;
-        private string prenomP;
-        private DateTime date_NaissanceF;
-        private string niveau_ScolaireF;
-        private string telF;
+        private int id_P;
+        private string nom_P;
+        private string prenom_P;
+        private DateTime date_Naissance_P;
+        private string niveau_Scolaire_P;
+        private string adresse_P;
+        private string tel_P;
 
-        public int IdP { get => idP; set => idP = value; }
-        public string NomP { get => nomP; set => nomP = value; }
-        public string PrenomP { get => prenomP; set => prenomP = value; }
-        public DateTime Date_NaissanceF { get => date_NaissanceF; set => date_NaissanceF = value; }
-        public string Niveau_ScolaireF { get => niveau_ScolaireF; set => niveau_ScolaireF = value; }
-        public string TelF { get => telF; set => telF = value; }
+        public int Id_P { get => id_P; set => id_P = value; }
+        public string Nom_P { get => nom_P; set => nom_P = value; }
+        public string Prenom_P { get => prenom_P; set => prenom_P = value; }
+        public DateTime Date_Naissance_P { get => date_Naissance_P; set => date_Naissance_P = value; }
+        public string Niveau_Scolaire_P { get => niveau_Scolaire_P; set => niveau_Scolaire_P = value; }
+        public string Adresse_P { get => adresse_P; set => adresse_P = value; }
+        public string Tel_P { get => tel_P; set => tel_P = value; }
     }
 }

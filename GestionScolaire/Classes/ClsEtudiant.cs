@@ -9,7 +9,7 @@ namespace GestionScolaire.Classes
 {
     public class ClsEtudiant
     {
-        ClsAdo a = new ClsAdo();
+       
 
         private int id_E;
         private string nom_E;
@@ -40,26 +40,9 @@ namespace GestionScolaire.Classes
         public string NomMere_E { get => nomMere_E; set => nomMere_E = value; }
         public string MetierMere_E { get => metierMere_E; set => metierMere_E = value; }
         public string TelMere_E { get => telMere_E; set => telMere_E = value; }
-        //-----------------------
+        //----------------------------------
 
-        public static void ajouter()
-        {
-            try
-            {
-                ClsAdo a = new ClsAdo();
-                a.connecter();
-                a.cmd.CommandText = "insert into ";
-                a.cmd.Connection = a.cn;
-                a.cmd.ExecuteNonQuery();
-                a.Deconnecter();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur" + ex.Message);
-
-            }
-        }
+       
 
 
     }

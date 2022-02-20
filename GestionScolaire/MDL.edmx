@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_a7e750_dbtestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Classe">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etage_C" Type="int" />
+          <Property Name="Superficie_C" Type="varchar" MaxLength="100" />
+          <Property Name="SalleInformatique_C" Type="varchar" MaxLength="100" />
+          <Property Name="Labo_C" Type="varchar" MaxLength="100" />
+          <Property Name="TravauxPratique_C" Type="varchar" MaxLength="100" />
+          <Property Name="Bibliotheque_C" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_E" Type="varchar" MaxLength="100" />
+          <Property Name="Prenom_E" Type="varchar" MaxLength="100" />
+          <Property Name="Datenaissance_E" Type="date" />
+          <Property Name="NiveauScolaire_E" Type="int" />
+          <Property Name="Adresse_E" Type="varchar" MaxLength="100" />
+          <Property Name="Sexe_E" Type="varchar" MaxLength="100" />
+          <Property Name="Tel_E" Type="varchar" MaxLength="100" />
+          <Property Name="NomPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="MetierPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="TelPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="NomMere_E" Type="varchar" MaxLength="100" />
+          <Property Name="MetierMere_E" Type="varchar" MaxLength="100" />
+          <Property Name="TelMere_E" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Professeur">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_P" Type="varchar" MaxLength="100" />
+          <Property Name="Prenom_P" Type="varchar" MaxLength="100" />
+          <Property Name="Datenaissance_P" Type="date" />
+          <Property Name="NiveauScolaire_P" Type="int" />
+          <Property Name="Adresse_P" Type="varchar" MaxLength="100" />
+          <Property Name="Tel_P" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="db_a7e750_dbtestModelStoreContainer">
+          <EntitySet Name="Classe" EntityType="Self.Classe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etudiant" EntityType="Self.Etudiant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professeur" EntityType="Self.Professeur" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a7e750_dbtestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Classe">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etage_C" Type="Int32" />
+          <Property Name="Superficie_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SalleInformatique_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Labo_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TravauxPratique_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Bibliotheque_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datenaissance_E" Type="DateTime" Precision="0" />
+          <Property Name="NiveauScolaire_E" Type="Int32" />
+          <Property Name="Adresse_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sexe_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NomPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MetierPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NomMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MetierMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Professeur">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datenaissance_P" Type="DateTime" Precision="0" />
+          <Property Name="NiveauScolaire_P" Type="Int32" />
+          <Property Name="Adresse_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="db_a7e750_dbtestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="Self.Classe" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiant" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a7e750_dbtestModelStoreContainer" CdmEntityContainer="db_a7e750_dbtestEntities">
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel.Classe">
+              <MappingFragment StoreEntitySet="Classe">
+                <ScalarProperty Name="id_C" ColumnName="id_C" />
+                <ScalarProperty Name="Etage_C" ColumnName="Etage_C" />
+                <ScalarProperty Name="Superficie_C" ColumnName="Superficie_C" />
+                <ScalarProperty Name="SalleInformatique_C" ColumnName="SalleInformatique_C" />
+                <ScalarProperty Name="Labo_C" ColumnName="Labo_C" />
+                <ScalarProperty Name="TravauxPratique_C" ColumnName="TravauxPratique_C" />
+                <ScalarProperty Name="Bibliotheque_C" ColumnName="Bibliotheque_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etudiants">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel.Etudiant">
+              <MappingFragment StoreEntitySet="Etudiant">
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="Nom_E" ColumnName="Nom_E" />
+                <ScalarProperty Name="Prenom_E" ColumnName="Prenom_E" />
+                <ScalarProperty Name="Datenaissance_E" ColumnName="Datenaissance_E" />
+                <ScalarProperty Name="NiveauScolaire_E" ColumnName="NiveauScolaire_E" />
+                <ScalarProperty Name="Adresse_E" ColumnName="Adresse_E" />
+                <ScalarProperty Name="Sexe_E" ColumnName="Sexe_E" />
+                <ScalarProperty Name="Tel_E" ColumnName="Tel_E" />
+                <ScalarProperty Name="NomPere_E" ColumnName="NomPere_E" />
+                <ScalarProperty Name="MetierPere_E" ColumnName="MetierPere_E" />
+                <ScalarProperty Name="TelPere_E" ColumnName="TelPere_E" />
+                <ScalarProperty Name="NomMere_E" ColumnName="NomMere_E" />
+                <ScalarProperty Name="MetierMere_E" ColumnName="MetierMere_E" />
+                <ScalarProperty Name="TelMere_E" ColumnName="TelMere_E" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professeurs">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel.Professeur">
+              <MappingFragment StoreEntitySet="Professeur">
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="Nom_P" ColumnName="Nom_P" />
+                <ScalarProperty Name="Prenom_P" ColumnName="Prenom_P" />
+                <ScalarProperty Name="Datenaissance_P" ColumnName="Datenaissance_P" />
+                <ScalarProperty Name="NiveauScolaire_P" ColumnName="NiveauScolaire_P" />
+                <ScalarProperty Name="Adresse_P" ColumnName="Adresse_P" />
+                <ScalarProperty Name="Tel_P" ColumnName="Tel_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

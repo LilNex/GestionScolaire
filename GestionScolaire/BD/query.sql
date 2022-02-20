@@ -24,10 +24,11 @@ create table Professeur(
 	Tel_P varchar(100)
 )
 create table Classe(
-    --Numero
+   
 	id_C int primary key identity,
 	Etage_C int,
 	Superficie_C varchar(100),
+	SalleInformatique_C varchar(100),
 	Labo_C  varchar(100),
 	TravauxPratique_C varchar(100),
 	Bibliotheque_C varchar(100)
@@ -55,13 +56,14 @@ create table Absence(
 	id_Absence int primary key identity,
 	Date_Absence date,
 	Justifie_Absence varchar(100),
+	id_E int foreign key references Etudiant (id_E),
 	--id_Cour
 )
 create table Documents(
 	id_D int primary key identity,
 	Nom_D varchar(100),
 	Chemin_D varchar(100),
-	DateDepot Date
+	DateDepot_D Date
 )
 create table Paiement(
 	id_Pa int primary key identity,

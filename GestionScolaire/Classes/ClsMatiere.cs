@@ -9,12 +9,12 @@ namespace GestionScolaire.Classes
     {
         private int idM;
         private string nomM;
-        private int idP;
-        private int numSalle;
+        private int id_P;
+        private int numSalleM;
 
         public int IdM { get => idM; set => idM = value; }
         public string NomM { get => nomM; set => nomM = value; }
-        public int NumSalle { get => numSalle; set => numSalle = value; }
-        public int IdP { get => idP; set => idP = value; }
+        public int Id_P { get => id_P; set => id_P = value; }
+        public int NumSalleM { get => numSalleM; set => numSalleM = value; }
     }
 }
