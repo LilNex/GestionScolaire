@@ -12,23 +12,19 @@ namespace GestionScolaire
     using System;
     using System.Collections.Generic;
     
-    public partial class Professeur
+    public partial class client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Professeur()
+        public client()
         {
-            this.Matieres = new HashSet<Matiere>();
+            this.commandes = new HashSet<commande>();
         }
     
-        public int id_P { get; set; }
-        public string Nom_P { get; set; }
-        public string Prenom_P { get; set; }
-        public Nullable<System.DateTime> Datenaissance_P { get; set; }
-        public Nullable<int> NiveauScolaire_P { get; set; }
-        public string Adresse_P { get; set; }
-        public string Tel_P { get; set; }
+        public int idClient { get; set; }
+        public string nomClient { get; set; }
+        public string villeClient { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Matiere> Matieres { get; set; }
+        public virtual ICollection<commande> commandes { get; set; }
     }
 }

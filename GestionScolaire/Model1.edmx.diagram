@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ee65ad1eaf12494f9506a3d8877334e4" Name="Diagram1">
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Avertissement" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Classe" Width="1.5" PointX="7.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.client" Width="1.5" PointX="2.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.commande" Width="1.5" PointX="5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.detail" Width="1.5" PointX="8" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Etudiant" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Matiere" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Note" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.produit" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_a7e750_dbtestModel1.Professeur" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__Avertissem__id_E__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__commande__idClie__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__detail__idProdui__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__Note__id_E__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__Matiere__id_P__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="db_a7e750_dbtestModel1.FK__Note__id_M__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

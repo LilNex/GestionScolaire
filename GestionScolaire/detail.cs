@@ -12,14 +12,12 @@ namespace GestionScolaire
     using System;
     using System.Collections.Generic;
     
-    public partial class Classe
+    public partial class detail
     {
-        public int id_C { get; set; }
-        public Nullable<int> Etage_C { get; set; }
-        public string Superficie_C { get; set; }
-        public string SalleInformatique_C { get; set; }
-        public string Labo_C { get; set; }
-        public string TravauxPratique_C { get; set; }
-        public string Bibliotheque_C { get; set; }
+        public int idCom { get; set; }
+        public Nullable<int> idProduit { get; set; }
+        public Nullable<int> qte { get; set; }
+    
+        public virtual produit produit { get; set; }
     }
 }

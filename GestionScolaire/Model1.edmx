@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="db_a7e750_dbtestModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Avertissement">
+          <Key>
+            <PropertyRef Name="id_A" />
+          </Key>
+          <Property Name="id_A" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_E" Type="int" />
+          <Property Name="Motif_A" Type="varchar" MaxLength="100" />
+          <Property Name="Severite_A" Type="int" />
+        </EntityType>
+        <EntityType Name="Classe">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Etage_C" Type="int" />
+          <Property Name="Superficie_C" Type="varchar" MaxLength="100" />
+          <Property Name="SalleInformatique_C" Type="varchar" MaxLength="100" />
+          <Property Name="Labo_C" Type="varchar" MaxLength="100" />
+          <Property Name="TravauxPratique_C" Type="varchar" MaxLength="100" />
+          <Property Name="Bibliotheque_C" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomClient" Type="varchar" MaxLength="20" />
+          <Property Name="villeClient" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="commande">
+          <Key>
+            <PropertyRef Name="idCom" />
+          </Key>
+          <Property Name="idCom" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="idClient" Type="int" />
+        </EntityType>
+        <EntityType Name="detail">
+          <Key>
+            <PropertyRef Name="idCom" />
+          </Key>
+          <Property Name="idCom" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProduit" Type="int" />
+          <Property Name="qte" Type="int" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_E" Type="varchar" MaxLength="100" />
+          <Property Name="Prenom_E" Type="varchar" MaxLength="100" />
+          <Property Name="Datenaissance_E" Type="date" />
+          <Property Name="NiveauScolaire_E" Type="int" />
+          <Property Name="Adresse_E" Type="varchar" MaxLength="100" />
+          <Property Name="Sexe_E" Type="varchar" MaxLength="100" />
+          <Property Name="Tel_E" Type="varchar" MaxLength="100" />
+          <Property Name="NomPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="MetierPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="TelPere_E" Type="varchar" MaxLength="100" />
+          <Property Name="NomMere_E" Type="varchar" MaxLength="100" />
+          <Property Name="MetierMere_E" Type="varchar" MaxLength="100" />
+          <Property Name="TelMere_E" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Matiere">
+          <Key>
+            <PropertyRef Name="id_M" />
+          </Key>
+          <Property Name="id_M" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_M" Type="varchar" MaxLength="100" />
+          <Property Name="id_P" Type="int" />
+          <Property Name="NumSalle_M" Type="int" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="id_N" />
+          </Key>
+          <Property Name="id_N" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_M" Type="int" />
+          <Property Name="id_E" Type="int" />
+          <Property Name="NumControle_N" Type="int" />
+          <Property Name="Moyenne_N" Type="int" />
+        </EntityType>
+        <EntityType Name="produit">
+          <Key>
+            <PropertyRef Name="idProduit" />
+          </Key>
+          <Property Name="idProduit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomProduit" Type="varchar" MaxLength="20" />
+          <Property Name="prix" Type="int" />
+        </EntityType>
+        <EntityType Name="Professeur">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_P" Type="varchar" MaxLength="100" />
+          <Property Name="Prenom_P" Type="varchar" MaxLength="100" />
+          <Property Name="Datenaissance_P" Type="date" />
+          <Property Name="NiveauScolaire_P" Type="int" />
+          <Property Name="Adresse_P" Type="varchar" MaxLength="100" />
+          <Property Name="Tel_P" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__Avertissem__id_E__4222D4EF">
+          <End Role="Etudiant" Type="Self.Etudiant" Multiplicity="0..1" />
+          <End Role="Avertissement" Type="Self.Avertissement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiant">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Avertissement">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__commande__idClie__31EC6D26">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="commande" Type="Self.commande" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="commande">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detail__idProdui__2D27B809">
+          <End Role="produit" Type="Self.produit" Multiplicity="0..1" />
+          <End Role="detail" Type="Self.detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produit">
+              <PropertyRef Name="idProduit" />
+            </Principal>
+            <Dependent Role="detail">
+              <PropertyRef Name="idProduit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matiere__id_P__3A81B327">
+          <End Role="Professeur" Type="Self.Professeur" Multiplicity="0..1" />
+          <End Role="Matiere" Type="Self.Matiere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professeur">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Matiere">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Note__id_E__3E52440B">
+          <End Role="Etudiant" Type="Self.Etudiant" Multiplicity="0..1" />
+          <End Role="Note" Type="Self.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiant">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Note__id_M__3D5E1FD2">
+          <End Role="Matiere" Type="Self.Matiere" Multiplicity="0..1" />
+          <End Role="Note" Type="Self.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matiere">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="id_M" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_a7e750_dbtestModel1StoreContainer">
+          <EntitySet Name="Avertissement" EntityType="Self.Avertissement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classe" EntityType="Self.Classe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="client" EntityType="Self.client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="commande" EntityType="Self.commande" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detail" EntityType="Self.detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Etudiant" EntityType="Self.Etudiant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matiere" EntityType="Self.Matiere" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Note" EntityType="Self.Note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produit" EntityType="Self.produit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Professeur" EntityType="Self.Professeur" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Avertissem__id_E__4222D4EF" Association="Self.FK__Avertissem__id_E__4222D4EF">
+            <End Role="Etudiant" EntitySet="Etudiant" />
+            <End Role="Avertissement" EntitySet="Avertissement" />
+          </AssociationSet>
+          <AssociationSet Name="FK__commande__idClie__31EC6D26" Association="Self.FK__commande__idClie__31EC6D26">
+            <End Role="client" EntitySet="client" />
+            <End Role="commande" EntitySet="commande" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detail__idProdui__2D27B809" Association="Self.FK__detail__idProdui__2D27B809">
+            <End Role="produit" EntitySet="produit" />
+            <End Role="detail" EntitySet="detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matiere__id_P__3A81B327" Association="Self.FK__Matiere__id_P__3A81B327">
+            <End Role="Professeur" EntitySet="Professeur" />
+            <End Role="Matiere" EntitySet="Matiere" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Note__id_E__3E52440B" Association="Self.FK__Note__id_E__3E52440B">
+            <End Role="Etudiant" EntitySet="Etudiant" />
+            <End Role="Note" EntitySet="Note" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Note__id_M__3D5E1FD2" Association="Self.FK__Note__id_M__3D5E1FD2">
+            <End Role="Matiere" EntitySet="Matiere" />
+            <End Role="Note" EntitySet="Note" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_a7e750_dbtestModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Avertissement">
+          <Key>
+            <PropertyRef Name="id_A" />
+          </Key>
+          <Property Name="id_A" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_E" Type="Int32" />
+          <Property Name="Motif_A" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Severite_A" Type="Int32" />
+          <NavigationProperty Name="Etudiant" Relationship="Self.FK__Avertissem__id_E__4222D4EF" FromRole="Avertissement" ToRole="Etudiant" />
+        </EntityType>
+        <EntityType Name="Classe">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Etage_C" Type="Int32" />
+          <Property Name="Superficie_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SalleInformatique_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Labo_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TravauxPratique_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Bibliotheque_C" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="idClient" />
+          </Key>
+          <Property Name="idClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="villeClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="commandes" Relationship="Self.FK__commande__idClie__31EC6D26" FromRole="client" ToRole="commande" />
+        </EntityType>
+        <EntityType Name="commande">
+          <Key>
+            <PropertyRef Name="idCom" />
+          </Key>
+          <Property Name="idCom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="idClient" Type="Int32" />
+          <NavigationProperty Name="client" Relationship="Self.FK__commande__idClie__31EC6D26" FromRole="commande" ToRole="client" />
+        </EntityType>
+        <EntityType Name="detail">
+          <Key>
+            <PropertyRef Name="idCom" />
+          </Key>
+          <Property Name="idCom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProduit" Type="Int32" />
+          <Property Name="qte" Type="Int32" />
+          <NavigationProperty Name="produit" Relationship="Self.FK__detail__idProdui__2D27B809" FromRole="detail" ToRole="produit" />
+        </EntityType>
+        <EntityType Name="Etudiant">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datenaissance_E" Type="DateTime" Precision="0" />
+          <Property Name="NiveauScolaire_E" Type="Int32" />
+          <Property Name="Adresse_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sexe_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NomPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MetierPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelPere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NomMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MetierMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TelMere_E" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Avertissements" Relationship="Self.FK__Avertissem__id_E__4222D4EF" FromRole="Etudiant" ToRole="Avertissement" />
+          <NavigationProperty Name="Notes" Relationship="Self.FK__Note__id_E__3E52440B" FromRole="Etudiant" ToRole="Note" />
+        </EntityType>
+        <EntityType Name="Matiere">
+          <Key>
+            <PropertyRef Name="id_M" />
+          </Key>
+          <Property Name="id_M" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_M" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="id_P" Type="Int32" />
+          <Property Name="NumSalle_M" Type="Int32" />
+          <NavigationProperty Name="Professeur" Relationship="Self.FK__Matiere__id_P__3A81B327" FromRole="Matiere" ToRole="Professeur" />
+          <NavigationProperty Name="Notes" Relationship="Self.FK__Note__id_M__3D5E1FD2" FromRole="Matiere" ToRole="Note" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="id_N" />
+          </Key>
+          <Property Name="id_N" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_M" Type="Int32" />
+          <Property Name="id_E" Type="Int32" />
+          <Property Name="NumControle_N" Type="Int32" />
+          <Property Name="Moyenne_N" Type="Int32" />
+          <NavigationProperty Name="Etudiant" Relationship="Self.FK__Note__id_E__3E52440B" FromRole="Note" ToRole="Etudiant" />
+          <NavigationProperty Name="Matiere" Relationship="Self.FK__Note__id_M__3D5E1FD2" FromRole="Note" ToRole="Matiere" />
+        </EntityType>
+        <EntityType Name="produit">
+          <Key>
+            <PropertyRef Name="idProduit" />
+          </Key>
+          <Property Name="idProduit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomProduit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="prix" Type="Int32" />
+          <NavigationProperty Name="details" Relationship="Self.FK__detail__idProdui__2D27B809" FromRole="produit" ToRole="detail" />
+        </EntityType>
+        <EntityType Name="Professeur">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Prenom_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Datenaissance_P" Type="DateTime" Precision="0" />
+          <Property Name="NiveauScolaire_P" Type="Int32" />
+          <Property Name="Adresse_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Tel_P" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Matieres" Relationship="Self.FK__Matiere__id_P__3A81B327" FromRole="Professeur" ToRole="Matiere" />
+        </EntityType>
+        <Association Name="FK__Avertissem__id_E__4222D4EF">
+          <End Role="Etudiant" Type="Self.Etudiant" Multiplicity="0..1" />
+          <End Role="Avertissement" Type="Self.Avertissement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiant">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Avertissement">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__commande__idClie__31EC6D26">
+          <End Role="client" Type="Self.client" Multiplicity="0..1" />
+          <End Role="commande" Type="Self.commande" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="idClient" />
+            </Principal>
+            <Dependent Role="commande">
+              <PropertyRef Name="idClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detail__idProdui__2D27B809">
+          <End Role="produit" Type="Self.produit" Multiplicity="0..1" />
+          <End Role="detail" Type="Self.detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produit">
+              <PropertyRef Name="idProduit" />
+            </Principal>
+            <Dependent Role="detail">
+              <PropertyRef Name="idProduit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Note__id_E__3E52440B">
+          <End Role="Etudiant" Type="Self.Etudiant" Multiplicity="0..1" />
+          <End Role="Note" Type="Self.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Etudiant">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matiere__id_P__3A81B327">
+          <End Role="Professeur" Type="Self.Professeur" Multiplicity="0..1" />
+          <End Role="Matiere" Type="Self.Matiere" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Professeur">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Matiere">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Note__id_M__3D5E1FD2">
+          <End Role="Matiere" Type="Self.Matiere" Multiplicity="0..1" />
+          <End Role="Note" Type="Self.Note" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matiere">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Note">
+              <PropertyRef Name="id_M" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_a7e750_dbtestEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Avertissements" EntityType="Self.Avertissement" />
+          <EntitySet Name="Classes" EntityType="Self.Classe" />
+          <EntitySet Name="clients" EntityType="Self.client" />
+          <EntitySet Name="commandes" EntityType="Self.commande" />
+          <EntitySet Name="details" EntityType="Self.detail" />
+          <EntitySet Name="Etudiants" EntityType="Self.Etudiant" />
+          <EntitySet Name="Matieres" EntityType="Self.Matiere" />
+          <EntitySet Name="Notes" EntityType="Self.Note" />
+          <EntitySet Name="produits" EntityType="Self.produit" />
+          <EntitySet Name="Professeurs" EntityType="Self.Professeur" />
+          <AssociationSet Name="FK__Avertissem__id_E__4222D4EF" Association="Self.FK__Avertissem__id_E__4222D4EF">
+            <End Role="Etudiant" EntitySet="Etudiants" />
+            <End Role="Avertissement" EntitySet="Avertissements" />
+          </AssociationSet>
+          <AssociationSet Name="FK__commande__idClie__31EC6D26" Association="Self.FK__commande__idClie__31EC6D26">
+            <End Role="client" EntitySet="clients" />
+            <End Role="commande" EntitySet="commandes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detail__idProdui__2D27B809" Association="Self.FK__detail__idProdui__2D27B809">
+            <End Role="produit" EntitySet="produits" />
+            <End Role="detail" EntitySet="details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Note__id_E__3E52440B" Association="Self.FK__Note__id_E__3E52440B">
+            <End Role="Etudiant" EntitySet="Etudiants" />
+            <End Role="Note" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matiere__id_P__3A81B327" Association="Self.FK__Matiere__id_P__3A81B327">
+            <End Role="Professeur" EntitySet="Professeurs" />
+            <End Role="Matiere" EntitySet="Matieres" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Note__id_M__3D5E1FD2" Association="Self.FK__Note__id_M__3D5E1FD2">
+            <End Role="Matiere" EntitySet="Matieres" />
+            <End Role="Note" EntitySet="Notes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="db_a7e750_dbtestModel1StoreContainer" CdmEntityContainer="db_a7e750_dbtestEntities1">
+          <EntitySetMapping Name="Avertissements">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Avertissement">
+              <MappingFragment StoreEntitySet="Avertissement">
+                <ScalarProperty Name="id_A" ColumnName="id_A" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="Motif_A" ColumnName="Motif_A" />
+                <ScalarProperty Name="Severite_A" ColumnName="Severite_A" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Classe">
+              <MappingFragment StoreEntitySet="Classe">
+                <ScalarProperty Name="id_C" ColumnName="id_C" />
+                <ScalarProperty Name="Etage_C" ColumnName="Etage_C" />
+                <ScalarProperty Name="Superficie_C" ColumnName="Superficie_C" />
+                <ScalarProperty Name="SalleInformatique_C" ColumnName="SalleInformatique_C" />
+                <ScalarProperty Name="Labo_C" ColumnName="Labo_C" />
+                <ScalarProperty Name="TravauxPratique_C" ColumnName="TravauxPratique_C" />
+                <ScalarProperty Name="Bibliotheque_C" ColumnName="Bibliotheque_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clients">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+                <ScalarProperty Name="nomClient" ColumnName="nomClient" />
+                <ScalarProperty Name="villeClient" ColumnName="villeClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="commandes">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.commande">
+              <MappingFragment StoreEntitySet="commande">
+                <ScalarProperty Name="idCom" ColumnName="idCom" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="idClient" ColumnName="idClient" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="details">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.detail">
+              <MappingFragment StoreEntitySet="detail">
+                <ScalarProperty Name="idCom" ColumnName="idCom" />
+                <ScalarProperty Name="idProduit" ColumnName="idProduit" />
+                <ScalarProperty Name="qte" ColumnName="qte" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Etudiants">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Etudiant">
+              <MappingFragment StoreEntitySet="Etudiant">
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="Nom_E" ColumnName="Nom_E" />
+                <ScalarProperty Name="Prenom_E" ColumnName="Prenom_E" />
+                <ScalarProperty Name="Datenaissance_E" ColumnName="Datenaissance_E" />
+                <ScalarProperty Name="NiveauScolaire_E" ColumnName="NiveauScolaire_E" />
+                <ScalarProperty Name="Adresse_E" ColumnName="Adresse_E" />
+                <ScalarProperty Name="Sexe_E" ColumnName="Sexe_E" />
+                <ScalarProperty Name="Tel_E" ColumnName="Tel_E" />
+                <ScalarProperty Name="NomPere_E" ColumnName="NomPere_E" />
+                <ScalarProperty Name="MetierPere_E" ColumnName="MetierPere_E" />
+                <ScalarProperty Name="TelPere_E" ColumnName="TelPere_E" />
+                <ScalarProperty Name="NomMere_E" ColumnName="NomMere_E" />
+                <ScalarProperty Name="MetierMere_E" ColumnName="MetierMere_E" />
+                <ScalarProperty Name="TelMere_E" ColumnName="TelMere_E" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matieres">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Matiere">
+              <MappingFragment StoreEntitySet="Matiere">
+                <ScalarProperty Name="id_M" ColumnName="id_M" />
+                <ScalarProperty Name="Nom_M" ColumnName="Nom_M" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="NumSalle_M" ColumnName="NumSalle_M" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Note">
+              <MappingFragment StoreEntitySet="Note">
+                <ScalarProperty Name="id_N" ColumnName="id_N" />
+                <ScalarProperty Name="id_M" ColumnName="id_M" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="NumControle_N" ColumnName="NumControle_N" />
+                <ScalarProperty Name="Moyenne_N" ColumnName="Moyenne_N" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produits">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.produit">
+              <MappingFragment StoreEntitySet="produit">
+                <ScalarProperty Name="idProduit" ColumnName="idProduit" />
+                <ScalarProperty Name="nomProduit" ColumnName="nomProduit" />
+                <ScalarProperty Name="prix" ColumnName="prix" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Professeurs">
+            <EntityTypeMapping TypeName="db_a7e750_dbtestModel1.Professeur">
+              <MappingFragment StoreEntitySet="Professeur">
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="Nom_P" ColumnName="Nom_P" />
+                <ScalarProperty Name="Prenom_P" ColumnName="Prenom_P" />
+                <ScalarProperty Name="Datenaissance_P" ColumnName="Datenaissance_P" />
+                <ScalarProperty Name="NiveauScolaire_P" ColumnName="NiveauScolaire_P" />
+                <ScalarProperty Name="Adresse_P" ColumnName="Adresse_P" />
+                <ScalarProperty Name="Tel_P" ColumnName="Tel_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

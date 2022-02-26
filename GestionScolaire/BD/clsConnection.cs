@@ -11,7 +11,7 @@ namespace GestionScolaire.BD
 
         public static void Init()
         {
-            
+            db_a7e750_dbtestEntities db = new db_a7e750_dbtestEntities();
 
         }
       

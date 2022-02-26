@@ -12,23 +12,21 @@ namespace GestionScolaire
     using System;
     using System.Collections.Generic;
     
-    public partial class Professeur
+    public partial class Matiere
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Professeur()
+        public Matiere()
         {
-            this.Matieres = new HashSet<Matiere>();
+            this.Notes = new HashSet<Note>();
         }
     
-        public int id_P { get; set; }
-        public string Nom_P { get; set; }
-        public string Prenom_P { get; set; }
-        public Nullable<System.DateTime> Datenaissance_P { get; set; }
-        public Nullable<int> NiveauScolaire_P { get; set; }
-        public string Adresse_P { get; set; }
-        public string Tel_P { get; set; }
+        public int id_M { get; set; }
+        public string Nom_M { get; set; }
+        public Nullable<int> id_P { get; set; }
+        public Nullable<int> NumSalle_M { get; set; }
     
+        public virtual Professeur Professeur { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Matiere> Matieres { get; set; }
+        public virtual ICollection<Note> Notes { get; set; }
     }
 }
